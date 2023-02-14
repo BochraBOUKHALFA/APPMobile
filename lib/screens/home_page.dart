@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child:
-            Text('Bienvenue sur la page d\'accueil !  SUUUUUU bhanalah !'),
+            Text('Bienvenue sur la page d\'accueil !'),
       ),
     );
   }
