@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'APPMOBILE/lib/screens/readqr.dart';
+import 'package:appmobile/screens/readqr.dart';
 
 
 void main() {
