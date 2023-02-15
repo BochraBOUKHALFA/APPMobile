@@ -1,7 +1,8 @@
 import 'package:appmobile/constants.dart';
-//import 'package:appmobile/screens/prehome/prehome_screen.dart';
 import 'package:flutter/material.dart';
 //import 'package:appmobile/screens/home/home_screen.dart';
+//import 'package:appmobile/screens/prehome/prehome_screen.dart';
+
 //import 'package:appmobile/screens/details/details_screen.dart';
 import 'package:appmobile/screens/qr_code/qr_code_screen.dart';
 
