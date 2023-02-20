@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  draw_on
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

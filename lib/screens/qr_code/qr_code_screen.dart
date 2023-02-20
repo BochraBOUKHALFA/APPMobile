@@ -1,6 +1,8 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:appmobile/services/readqr.dart';
+import 'package:appmobile/services/api_service.dart';
 
 class Qr_code_Screen extends StatefulWidget {
   @override
@@ -8,11 +10,11 @@ class Qr_code_Screen extends StatefulWidget {
 }
 
 class _ScanScreenState extends State<Qr_code_Screen> {
-  var qrstr = "let's Scan it";
   var height, width;
 
   @override
   Widget build(BuildContext context) {
+    String qrCode = '';
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -24,32 +26,21 @@ class _ScanScreenState extends State<Qr_code_Screen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                qrstr,
-                style: TextStyle(color: Colors.blue, fontSize: 30),
-              ),
-              ElevatedButton(onPressed: scanQr, child: Text(('Scanner'))),
+              ElevatedButton(
+                  onPressed: () {
+                    scanQr().then((qrResult) {
+                      final apiService = ApiService();
+                      apiService.getSeller(qrResult).then((seller) {
+                        // Utiliser le résultat de la fonction getSeller ici
+                      });
+                    });
+                  },
+                  child: Text(('Scanner'))),
               SizedBox(
                 height: width,
               )
             ],
           ),
         ));
-  }
-
-  Future<String> scanQr() async {
-    try {
-      FlutterBarcodeScanner.scanBarcode('#2A99CF', 'cancel', true, ScanMode.QR)
-          .then((value) {
-        setState(() {
-          qrstr = value;
-        });
-      });
-    } catch (e) {
-      setState(() {
-        qrstr = 'unable to read this';
-      });
-    }
-    return qrstr;
   }
 }
