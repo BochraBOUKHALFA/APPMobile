@@ -1,3 +1,4 @@
+import 'package:appmobile/screens/home/home_screen.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -27,15 +28,27 @@ class _ScanScreenState extends State<Qr_code_Screen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () {
-                    scanQr().then((qrResult) {
-                      final apiService = ApiService();
-                      apiService.getSeller(qrResult).then((seller) {
-                        // Utiliser le résultat de la fonction getSeller ici
-                      });
+                onPressed: () {
+                  scanQr().then((qrResult) {
+                    final apiService = ApiService();
+                    apiService.getSeller(qrResult).then((seller) {
+                      // Redirection vers une autre page si la requête réussit
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    }).catchError((error) {
+                      // Redirection vers une autre page si la requête échoue
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Qr_code_Screen()),
+                      );
                     });
-                  },
-                  child: Text(('Scanner'))),
+                  });
+                },
+                child: Text('Scan QR code'),
+              ),
               SizedBox(
                 height: width,
               )
