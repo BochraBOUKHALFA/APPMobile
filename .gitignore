@@ -16,7 +16,6 @@ migrate_working_dir/
 *.iws
 .idea/
 .vscode/
-ios/
 macos/
 
 
