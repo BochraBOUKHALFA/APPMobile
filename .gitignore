@@ -16,7 +16,6 @@ migrate_working_dir/
 *.iws
 .idea/
 .vscode/
-ios/
 macos/
 
 
@@ -46,6 +45,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-/ios
+ios/Runner.xcodeproj
+ios/Runner.xcworkspace
+ios/Runner.xcodeproj/project.pbxproj
 /android

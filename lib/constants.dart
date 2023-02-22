@@ -6,3 +6,5 @@ const kTextColor = Color.fromARGB(255, 0, 2, 1);
 const kBackgroundColor = Color.fromARGB(255, 255, 255, 255);
 
 const double kDefaultPadding = 20.0;
+
+const String URL_API_SELLER = "https://adminsellers.onrender.com";
