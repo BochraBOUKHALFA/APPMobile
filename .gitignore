@@ -17,7 +17,7 @@ migrate_working_dir/
 .idea/
 .vscode/
 macos/
-ios/
+
 
 
 # The .vscode folder contains launch configuration and tasks you configure in
