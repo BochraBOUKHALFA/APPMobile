@@ -31,7 +31,8 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                 onPressed: () {
                   scanQr().then((qrResult) {
                     final apiService = ApiService();
-                    apiService.getSeller(qrResult).then((seller) {
+                    apiService.getSeller(qrResult).then((first_name) {
+                      
                       // Redirection vers une autre page si la requête réussit
                       Navigator.push(
                         context,
