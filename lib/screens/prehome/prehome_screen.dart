@@ -1,3 +1,4 @@
+import 'package:appmobile/screens/email/email_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:appmobile/screens/qr_code/qr_code_screen.dart';
 import 'package:appmobile/constants.dart';
@@ -10,8 +11,8 @@ class PrehomeScreen extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           // Rediriger l'utilisateur vers la page Qr_code_Screen() une fois le délai écoulé
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => Qr_code_Screen()));
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => EmailScreen()));
         }
         return Scaffold(
           body: Align(
