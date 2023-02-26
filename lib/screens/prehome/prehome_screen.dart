@@ -12,7 +12,7 @@ class PrehomeScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           // Rediriger l'utilisateur vers la page Qr_code_Screen() une fois le délai écoulé
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => EmailScreen()));
+              context, MaterialPageRoute(builder: (context) => SignInPage1()));
         }
         return Scaffold(
           body: Align(
