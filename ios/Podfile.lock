@@ -2,23 +2,33 @@ PODS:
   - Flutter (3.0.0)
   - flutter_barcode_scanner (2.0.0):
     - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - Flutter
   - flutter_barcode_scanner (from `../packages/flutter_barcode_scanner/ios`)
+  - fluttertoast (from `../packages/fluttertoast-8.2.1/ios`)
 
 SPEC REPOS:
   trunk:
     - Flutter
+    - Toast
 
 EXTERNAL SOURCES:
   flutter_barcode_scanner:
     :path: "../packages/flutter_barcode_scanner/ios"
+  fluttertoast:
+    :path: "../packages/fluttertoast-8.2.1/ios"
 
 SPEC CHECKSUMS:
   Flutter: aef388869c2d2beecc8df50c818fa66e9c6eb1fb
   flutter_barcode_scanner: 7a1144744c28dc0c57a8de7218ffe5ec59a9e4bf
+  fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: d04e84c6909f04b259add29c71c1bf6f4e90f0fb
+PODFILE CHECKSUM: 53e2b48693c2424ba571572722988e9ab7b68b4f
 
 COCOAPODS: 1.11.3

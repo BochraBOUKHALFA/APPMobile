@@ -9,6 +9,7 @@ target 'Runner' do
 
   # Pods for Runner
   pod 'Flutter'
+  pod 'fluttertoast', :path => '../packages/fluttertoast-8.2.1/ios'
   pod 'flutter_barcode_scanner', :path => '../packages/flutter_barcode_scanner/ios'
 
 end

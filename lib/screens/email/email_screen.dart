@@ -1,5 +1,9 @@
 import 'package:appmobile/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../../services/api_service.dart';
+import '../qr_code/qr_code_screen.dart';
 
 class SignInPage1 extends StatefulWidget {
   const SignInPage1({Key? key}) : super(key: key);
@@ -13,6 +17,7 @@ class _SignInPage1State extends State<SignInPage1> {
   bool _rememberMe = false;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +58,7 @@ class _SignInPage1State extends State<SignInPage1> {
                     ),
                     _gap(),
                     TextFormField(
+                      controller: _emailController,
                       validator: (value) {
                         // add email validation
                         if (value == null || value.isEmpty) {
@@ -112,9 +118,35 @@ class _SignInPage1State extends State<SignInPage1> {
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (_formKey.currentState?.validate() ?? false) {
-                            /// do something
+                            String email = _emailController.text;
+                            final apiService = ApiService();
+                            String response =
+                                await apiService.connectionSeller(email);
+                            if (response == "connection successful") {
+                              Fluttertoast.showToast(
+                                  msg:
+                                      "Vérification réussie, consultez vos mails",
+                                  toastLength: Toast.LENGTH_LONG,
+                                  gravity: ToastGravity.TOP,
+                                  backgroundColor: Colors.green,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Qr_code_Screen()));
+                            } else {
+                              Fluttertoast.showToast(
+                                  msg: "Vérification échouée",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.TOP,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 170, 24, 27),
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            }
                           }
                         },
                       ),

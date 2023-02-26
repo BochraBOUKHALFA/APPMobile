@@ -22,4 +22,19 @@ class ApiService {
       throw Exception('Erreur de connexion : $e');
     }
   }
+
+  Future<String> connectionSeller(String email) async {
+    try {
+      String apiUrl =
+          '$URL_API_SELLER/connection_seller?email=$email'; // l'URL de l'API
+      final response = await http.get(Uri.parse(apiUrl));
+      if (response.statusCode == 200) {
+        return "connection successful";
+      } else {
+        return "connection failed";
+      }
+    } catch (e) {
+      throw Exception('Erreur de connexion : $e');
+    }
+  }
 }
