@@ -22,7 +22,7 @@ class PrehomeScreen extends StatelessWidget {
               width: 300.0,
               height: 300.0,
               child: Image.asset(
-                'images/PayeTonKawa.png',
+                'assets/images/PayeTonKawa.png',
                 fit: BoxFit.contain,
               ),
             ),
