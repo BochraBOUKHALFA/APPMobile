@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:appmobile/services/readqr.dart';
 import 'package:appmobile/services/api_service.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Qr_code_Screen extends StatefulWidget {
   @override
@@ -32,15 +33,28 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                   scanQr().then((qrResult) {
                     final apiService = ApiService();
                     apiService.getSeller(qrResult).then((first_name) {
-                      
+                      Fluttertoast.showToast(
+                          msg: "Connexion réussie",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.TOP,
+                          backgroundColor: Colors.green,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
                       // Redirection vers une autre page si la requête réussit
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => HomeScreen()),
                       );
                     }).catchError((error) {
+                      Fluttertoast.showToast(
+                          msg: "Connexion echouée",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.TOP,
+                          backgroundColor: Color.fromARGB(255, 185, 29, 29),
+                          textColor: Colors.white,
+                          fontSize: 16.0);
                       // Redirection vers une autre page si la requête échoue
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => Qr_code_Screen()),
