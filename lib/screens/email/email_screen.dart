@@ -15,6 +15,7 @@ class SignInPage1 extends StatefulWidget {
 class _SignInPage1State extends State<SignInPage1> {
   bool _isPasswordVisible = false;
   bool _rememberMe = false;
+  bool isLoading = false;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
@@ -42,7 +43,7 @@ class _SignInPage1State extends State<SignInPage1> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
-                        "Welcome !",
+                        "Bienvenue !",
                         style: Theme.of(context).textTheme.headline5,
                         selectionColor: kPrimaryColor,
                       ),
@@ -50,7 +51,7 @@ class _SignInPage1State extends State<SignInPage1> {
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Text(
-                        "Enter your email to continue.",
+                        "Entrez votre email pour continuer",
                         style: Theme.of(context).textTheme.caption,
                         textAlign: TextAlign.center,
                         selectionColor: kPrimaryColor,
@@ -90,67 +91,92 @@ class _SignInPage1State extends State<SignInPage1> {
                           _rememberMe = value;
                         });
                       },
-                      title: const Text('Remember me'),
+                      title: const Text('Se rappeler de moi'),
                       controlAffinity: ListTileControlAffinity.leading,
                       dense: true,
                       contentPadding: const EdgeInsets.all(0),
                     ),
                     _gap(),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.brown,
-                        borderRadius: BorderRadius.circular(4),
+                    Stack(children: [
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.brown,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            primary: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              'Connexion',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          onPressed: () async {
+                            if (_formKey.currentState?.validate() ?? false) {
+                              setState(() {
+                                isLoading = true;
+                              });
+                              String email = _emailController.text;
+                              final apiService = ApiService();
+                              String response =
+                                  await apiService.connectionSeller(email);
+                              setState(() {
+                                isLoading = false;
+                              });
+                              if (response == "connection successful") {
+                                Fluttertoast.showToast(
+                                    msg:
+                                        "Vérification réussie, consultez vos mails",
+                                    toastLength: Toast.LENGTH_LONG,
+                                    gravity: ToastGravity.TOP,
+                                    backgroundColor: Colors.green,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Qr_code_Screen()));
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg: "Vérification échouée",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.TOP,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 170, 24, 27),
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                              }
+                            }
+                          },
+                        ),
                       ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
+                      // Loading indicator
+                      Visibility(
+                        visible: isLoading,
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.brown.withOpacity(0.5),
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          primary: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Text(
-                            'Sign in',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                        onPressed: () async {
-                          if (_formKey.currentState?.validate() ?? false) {
-                            String email = _emailController.text;
-                            final apiService = ApiService();
-                            String response =
-                                await apiService.connectionSeller(email);
-                            if (response == "connection successful") {
-                              Fluttertoast.showToast(
-                                  msg:
-                                      "Vérification réussie, consultez vos mails",
-                                  toastLength: Toast.LENGTH_LONG,
-                                  gravity: ToastGravity.TOP,
-                                  backgroundColor: Colors.green,
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Qr_code_Screen()));
-                            } else {
-                              Fluttertoast.showToast(
-                                  msg: "Vérification échouée",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.TOP,
-                                  backgroundColor:
-                                      Color.fromARGB(255, 170, 24, 27),
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
-                            }
-                          }
-                        },
                       ),
-                    ),
+                    ])
                   ],
                 ),
               ),
