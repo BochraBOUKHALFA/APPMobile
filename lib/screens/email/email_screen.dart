@@ -188,5 +188,5 @@ class _SignInPage1State extends State<SignInPage1> {
     );
   }
 
-  Widget _gap() => const SizedBox(height: 16);
+  Widget _gap() => const SizedBox(height: 14);
 }
