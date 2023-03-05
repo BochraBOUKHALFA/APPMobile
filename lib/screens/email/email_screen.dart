@@ -1,6 +1,7 @@
 import 'package:appmobile/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 import '../../services/api_service.dart';
 import '../qr_code/qr_code_screen.dart';
@@ -126,9 +127,9 @@ class _SignInPage1State extends State<SignInPage1> {
                                 isLoading = true;
                               });
                               String email = _emailController.text;
-                              final apiService = ApiService();
+                              http.Client client = http.Client();
                               String response =
-                                  await apiService.connectionSeller(email);
+                                  await connectionSeller(client, email);
                               setState(() {
                                 isLoading = false;
                               });

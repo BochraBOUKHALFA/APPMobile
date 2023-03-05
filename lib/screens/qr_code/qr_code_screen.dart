@@ -5,6 +5,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:appmobile/services/readqr.dart';
 import 'package:appmobile/services/api_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 class Qr_code_Screen extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
 
   @override
   Widget build(BuildContext context) {
+    http.Client client = http.Client();
     String qrCode = '';
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
@@ -31,8 +33,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
               ElevatedButton(
                 onPressed: () {
                   scanQr().then((qrResult) {
-                    final apiService = ApiService();
-                    apiService.getSeller(qrResult).then((first_name) {
+                    getSeller(client, qrResult).then((first_name) {
                       Fluttertoast.showToast(
                           msg: "Connexion réussie",
                           toastLength: Toast.LENGTH_LONG,
