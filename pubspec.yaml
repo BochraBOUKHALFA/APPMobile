@@ -47,10 +47,13 @@ dependencies:
    
 
   http: ^0.13.5
+  test: ^1.22.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.2.0 # For generating code (Mocks, etc)
+  mockito: ^5.2.0 # For mocking and stubbing
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
