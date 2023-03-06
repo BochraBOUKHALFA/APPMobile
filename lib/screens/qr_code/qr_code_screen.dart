@@ -36,7 +36,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 100),
+                    SizedBox(height: 80),
                     Image.asset(
                       'assets/images/Mon_projet_12.png',
                     ),
@@ -44,7 +44,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
-                        "Scanner le QR Code reçu par mail !",
+                        "Scanner le QR Code !",
                         style: Theme.of(context).textTheme.headline5,
                         selectionColor: kPrimaryColor,
                       ),
@@ -57,7 +57,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                         Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.brown,
+                            color: kPrimaryColor,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: ElevatedButton(
