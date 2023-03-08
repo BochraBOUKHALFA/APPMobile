@@ -1,4 +1,5 @@
 import 'package:appmobile/constants.dart';
+import 'package:appmobile/screens/details/details_screen.dart';
 import 'package:appmobile/screens/email/email_screen.dart';
 import 'package:appmobile/screens/prehome/prehome_screen.dart';
 import 'package:flutter/material.dart';
