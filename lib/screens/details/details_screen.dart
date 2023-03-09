@@ -15,21 +15,13 @@ class DeatailsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          'Sneaker',
+          'Coffee Machine',
           style: TextStyle(
               color: Colors.black, fontSize: 28, fontStyle: FontStyle.italic),
         ),
         centerTitle: true,
         elevation: 0.1,
         backgroundColor: Colors.white,
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.shopping_cart,
-                color: Colors.deepPurpleAccent,
-              ))
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -46,7 +38,7 @@ class DeatailsScreen extends StatelessWidget {
               ),
             ),
             const Text(
-              'Sneaker ||',
+              'Coffee Machine',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -66,49 +58,7 @@ Department ‏ : ‎ Womens''',
                 ),
               ),
             ),
-            Row(
-              children: [
-                const Text(
-                  'Quantity',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.remove,
-                      color: Colors.deepPurpleAccent,
-                    )),
-                Text(
-                  '1',
-                  style: TextStyle(color: Colors.black, fontSize: 25),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.add,
-                      color: Colors.deepPurpleAccent,
-                    )),
-              ],
-            ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Container(
-          height: 50,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.deepPurpleAccent),
-          child: const Center(
-              child: Text(
-            'Save',
-            style: TextStyle(color: Colors.white, fontSize: 28),
-          )),
         ),
       ),
     );
