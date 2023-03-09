@@ -13,5 +13,9 @@ target 'Runner' do
   pod 'flutter_barcode_scanner', :path => '../packages/flutter_barcode_scanner/ios'
   pod 'path_provider', :path => '../packages/path_provider/ios'
   pod 'path_provider_foundation', :path => '../packages/path_provider_foundation/ios'
+  pod 'flutter_inappwebview', :path => '../packages/flutter_inappwebview/ios'
+  pod 'url_launcher_ios', :path => '../packages/url_launcher_ios-6.1.2/ios'
+  pod 'webview_flutter_wkwebview', :path => '../packages/webview_flutter_wkwebview-3.2.1/ios'
+
 
 end
