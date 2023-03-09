@@ -2,33 +2,59 @@ PODS:
   - Flutter (3.0.0)
   - flutter_barcode_scanner (2.0.0):
     - Flutter
+  - flutter_inappwebview (0.0.1):
+    - Flutter
+    - flutter_inappwebview/Core (= 0.0.1)
+    - OrderedSet (~> 5.0)
+  - flutter_inappwebview/Core (0.0.1):
+    - Flutter
+    - OrderedSet (~> 5.0)
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
+  - OrderedSet (5.0.0)
   - Toast (4.0.0)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter
   - flutter_barcode_scanner (from `../packages/flutter_barcode_scanner/ios`)
+  - flutter_inappwebview (from `../packages/flutter_inappwebview/ios`)
   - fluttertoast (from `../packages/fluttertoast-8.2.1/ios`)
+  - url_launcher_ios (from `../packages/url_launcher_ios-6.1.2/ios`)
+  - webview_flutter_wkwebview (from `../packages/webview_flutter_wkwebview-3.2.1/ios`)
 
 SPEC REPOS:
   trunk:
     - Flutter
+    - OrderedSet
     - Toast
 
 EXTERNAL SOURCES:
   flutter_barcode_scanner:
     :path: "../packages/flutter_barcode_scanner/ios"
+  flutter_inappwebview:
+    :path: "../packages/flutter_inappwebview/ios"
   fluttertoast:
     :path: "../packages/fluttertoast-8.2.1/ios"
+  url_launcher_ios:
+    :path: "../packages/url_launcher_ios-6.1.2/ios"
+  webview_flutter_wkwebview:
+    :path: "../packages/webview_flutter_wkwebview-3.2.1/ios"
 
 SPEC CHECKSUMS:
   Flutter: aef388869c2d2beecc8df50c818fa66e9c6eb1fb
   flutter_barcode_scanner: 7a1144744c28dc0c57a8de7218ffe5ec59a9e4bf
+  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
   fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
+  webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 
-PODFILE CHECKSUM: 53e2b48693c2424ba571572722988e9ab7b68b4f
+PODFILE CHECKSUM: 334effc6fdc8b66cd279150664c37d6caaeb4fea
 
 COCOAPODS: 1.11.3

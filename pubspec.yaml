@@ -49,6 +49,11 @@ dependencies:
   http: ^0.13.5
   test: ^1.22.0
   flutter_3d_obj: ^0.0.6
+  model_viewer_plus: ^1.5.0
+  babylonjs_viewer: ^1.0.1
+  flutter_cube: ^0.1.1
+  url_launcher_ios: ^6.1.2
+  webview_flutter: ^3.0.0
 
 dev_dependencies:
   flutter_test:
