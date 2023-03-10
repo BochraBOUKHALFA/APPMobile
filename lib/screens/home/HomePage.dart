@@ -3,8 +3,6 @@ import 'package:appmobile/ApiData/Data.dart';
 import 'package:appmobile/ApiData/Response.dart';
 import 'package:appmobile/services/ApiServiceProvider.dart';
 
-
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -22,25 +20,25 @@ class _HomePageState extends State<HomePage> {
         body: FutureBuilder<Response>(
           future: _apiServiceProvider.getData(),
           builder: (context, snapshot) {
-            
             if (snapshot.hasData) {
-              List<Data> list = snapshot.data?.data ?? []; // use null-aware operators to handle null values
+              List<Data> list = snapshot.data?.data ??
+                  []; // use null-aware operators to handle null values
               return ListView.builder(
                   itemCount: list.length,
                   itemBuilder: (context, index) {
-                    Data? user = list[index]; // mark user as nullable
-                    print(user);
+                    Data? product = list[index];
                     return ListTile(
-                      title: Text(user.name ?? ""), // use null-aware operators to handle null values
-                      subtitle: Text(user.description ?? ""), // use null-aware operators to handle null values
+                      title: Text(product.name ?? ""),
+                      subtitle: Text(product.description ?? ""),
                       leading: CircleAvatar(
-                        backgroundImage: NetworkImage(user.color ?? ""), // use null-aware operators to handle null values
+                        backgroundImage: NetworkImage(
+                            "https://image.shutterstock.com/image-vector/coffee-machine-logo-design-260nw-621385727.jpg" ??
+                                ""),
                       ),
                     );
                   });
             } else {
-              //return Center(child: CircularProgressIndicator());
-              return Text('ligne 42');
+              return Center(child: CircularProgressIndicator());
             }
           },
         ));

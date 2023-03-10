@@ -30,7 +30,6 @@ macos/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
 .pub-cache/
 .pub/
 /build/
@@ -49,3 +48,4 @@ ios/Runner.xcodeproj
 ios/Runner.xcworkspace
 ios/Runner.xcodeproj/project.pbxproj
 /android
+.ios
