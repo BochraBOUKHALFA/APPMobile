@@ -5,12 +5,19 @@ PODS:
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
+  - path_provider (0.0.1):
+    - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - Toast (4.0.0)
 
 DEPENDENCIES:
   - Flutter
   - flutter_barcode_scanner (from `../packages/flutter_barcode_scanner/ios`)
   - fluttertoast (from `../packages/fluttertoast-8.2.1/ios`)
+  - path_provider (from `../packages/path_provider/ios`)
+  - path_provider_foundation (from `../packages/path_provider_foundation/ios`)
 
 SPEC REPOS:
   trunk:
@@ -22,13 +29,19 @@ EXTERNAL SOURCES:
     :path: "../packages/flutter_barcode_scanner/ios"
   fluttertoast:
     :path: "../packages/fluttertoast-8.2.1/ios"
+  path_provider:
+    :path: "../packages/path_provider/ios"
+  path_provider_foundation:
+    :path: "../packages/path_provider_foundation/ios"
 
 SPEC CHECKSUMS:
   Flutter: aef388869c2d2beecc8df50c818fa66e9c6eb1fb
   flutter_barcode_scanner: 7a1144744c28dc0c57a8de7218ffe5ec59a9e4bf
   fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 53e2b48693c2424ba571572722988e9ab7b68b4f
+PODFILE CHECKSUM: 13488db34ca62b48bf463f3e8b3a3ddfea02b45d
 
 COCOAPODS: 1.11.3
