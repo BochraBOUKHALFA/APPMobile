@@ -60,6 +60,11 @@ dependencies:
   arcore_flutter_plugin: ^0.1.0
   vector_math: ^2.1.4
   arkit_plugin: ^1.0.5
+  flutter_inappwebview: ^5.7.2+3
+  geolocator: ^9.0.2
+  geolocator_apple: ^2.2.5
+  permission_handler_apple: ^9.0.7
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

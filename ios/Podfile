@@ -14,8 +14,9 @@ target 'Runner' do
   pod 'path_provider', :path => '../packages/path_provider/ios'
   pod 'path_provider_foundation', :path => '../packages/path_provider_foundation/ios'
   pod 'flutter_inappwebview', :path => '../packages/flutter_inappwebview/ios'
-  pod 'url_launcher_ios', :path => '../packages/url_launcher_ios-6.1.2/ios'
-  pod 'webview_flutter_wkwebview', :path => '../packages/webview_flutter_wkwebview-3.2.1/ios'
+  pod 'geolocator_apple', :path => '../packages/geolocator_apple-2.2.5/ios'
+  pod 'permission_handler_apple', :path => '../packages/permission_handler_apple-9.0.7/ios'
+  pod 'url_launcher_ios', :path => '../packages/url_launcher_ios-6.1.2'
 
 
 end
