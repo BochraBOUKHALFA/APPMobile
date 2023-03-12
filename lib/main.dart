@@ -1,5 +1,6 @@
 import 'package:appmobile/constants.dart';
 import 'package:appmobile/screens/details/details_screen.dart';
+import 'package:appmobile/screens/details/AR.dart';
 import 'package:appmobile/screens/email/email_screen.dart';
 import 'package:appmobile/screens/prehome/prehome_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DeatailsScreen(),
+      home: ARScreen(),
     );
   }
 }
