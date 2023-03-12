@@ -51,7 +51,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        minSdkVersion 19 
+        minSdkVersion 24
     }
 
     buildTypes {
@@ -69,4 +69,16 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.ar:core:1.15.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+    implementation 'com.google.ar.sceneform:core:1.15.0'
 }
+
+apply plugin :  "com.google.ar.sceneform.plugin"
+
+sceneform.asset(
+    'sampleData/Coffee_machine_BI3.obj',
+    'default',
+    'sampleData/Coffee_machine_BI3.sfa',
+    'src/main/assets/Toon'
+)
