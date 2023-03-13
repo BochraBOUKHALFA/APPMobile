@@ -86,18 +86,22 @@ PODS:
     - KituraContracts (~> 1.2)
     - LoggerAPI (~> 1.7)
   - Toast (4.0.0)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - ar_flutter_plugin (from `../packages/ar_flutter_plugin-0.7.3/ios`)
   - arkit_plugin (from `../packages/arkit_plugin-1.0.5/ios`)
   - Flutter
   - flutter_barcode_scanner (from `../packages/flutter_barcode_scanner/ios`)
-  - flutter_inappwebview (from `../packages/flutter_inappwebview/ios`)
+  - flutter_inappwebview (from `../packages/flutter_inappwebview-5.7.2/ios`)
   - fluttertoast (from `../packages/fluttertoast-8.2.1/ios`)
-  - path_provider (from `../packages/path_provider/ios`)
-  - path_provider_foundation (from `../packages/path_provider_foundation/ios`)
-  - url_launcher_ios (from `../packages/url_launcher_ios-6.1.2/ios`)
-  - webview_flutter_wkwebview (from `../packages/webview_flutter_wkwebview-3.2.1/ios`)
+  - geolocator_apple (from `../packages/geolocator_apple-2.2.5/ios`)
+  - permission_handler_apple (from `../packages/permission_handler_apple-9.0.7/ios`)
+  - url_launcher_ios (from `../packages/url_launcher_ios-6.1.1/ios`)
+  - webview_flutter_wkwebview (from `../packages/webview_flutter_wkwebview-3.1.0/ios`)
 
 SPEC REPOS:
   trunk:
@@ -135,17 +139,17 @@ EXTERNAL SOURCES:
   flutter_barcode_scanner:
     :path: "../packages/flutter_barcode_scanner/ios"
   flutter_inappwebview:
-    :path: "../packages/flutter_inappwebview/ios"
+    :path: "../packages/flutter_inappwebview-5.7.2/ios"
   fluttertoast:
     :path: "../packages/fluttertoast-8.2.1/ios"
-  path_provider:
-    :path: "../packages/path_provider/ios"
-  path_provider_foundation:
-    :path: "../packages/path_provider_foundation/ios"
+  geolocator_apple:
+    :path: "../packages/geolocator_apple-2.2.5/ios"
+  permission_handler_apple:
+    :path: "../packages/permission_handler_apple-9.0.7/ios"
   url_launcher_ios:
-    :path: "../packages/url_launcher_ios-6.1.2/ios"
+    :path: "../packages/url_launcher_ios-6.1.1/ios"
   webview_flutter_wkwebview:
-    :path: "../packages/webview_flutter_wkwebview-3.2.1/ios"
+    :path: "../packages/webview_flutter_wkwebview-3.1.0/ios"
 
 SPEC CHECKSUMS:
   ar_flutter_plugin: 8e0c6026776a842d3deea2cf8da5d2a4ed8b2376
@@ -172,7 +176,9 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
+  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
 
-PODFILE CHECKSUM: 13488db34ca62b48bf463f3e8b3a3ddfea02b45d
+PODFILE CHECKSUM: 6197c83503a99c871b91241102abe51973fdbdec
 
 COCOAPODS: 1.11.3
