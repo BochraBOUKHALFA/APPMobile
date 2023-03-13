@@ -34,7 +34,7 @@ _onArCoreViewCreated(ArCoreController controller){
 _addToon(ArCoreController controller){
   final node = ArCoreReferenceNode(
     name: 'Coffee',
-    object3DFileName: 'Coffee.sfb',
+    object3DFileName: 'Coffee.sfa',
     scale: vector.Vector3(0.5,0.5,0.5),
     position: vector.Vector3(0,-1,-1),
     rotation: vector.Vector4(0,180,0,0),
