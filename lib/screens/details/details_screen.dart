@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 class DeatailsScreen extends StatelessWidget {
   const DeatailsScreen({Key? key}) : super(key: key);
@@ -28,8 +29,8 @@ class DeatailsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
+          children: const [
+            SizedBox(
               height: 350,
               width: double.infinity,
               child: WebView(
@@ -37,14 +38,14 @@ class DeatailsScreen extends StatelessWidget {
                 javascriptMode: JavascriptMode.unrestricted,
               ),
             ),
-            const Text(
+            Text(
               'Coffee Machine',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 25),
             ),
-            const Expanded(
+            Expanded(
               child: Text(
                 '''Product details
 Package Dimensions ‏ : ‎ 29 x 23 x 11 cm; 1 Kilograms

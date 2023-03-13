@@ -63,6 +63,7 @@ dependencies:
   geolocator_apple: ^2.2.5
   permission_handler_apple: ^9.0.7
   url_launcher: ^6.1.10
+  webview_flutter_wkwebview: ^2.9.5
 
 dev_dependencies:
   flutter_test:
