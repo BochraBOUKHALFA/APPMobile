@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:appmobile/ApiData/Data.dart';
 
-class DeatailsScreen extends StatelessWidget {
-  const DeatailsScreen({Key? key}) : super(key: key);
+class DetailsScreen extends StatelessWidget {
+  final Data product;
+
+  const DetailsScreen({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +18,8 @@ class DeatailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text(
-          'Coffee Machine',
+        title: Text(
+          product.name ?? '',
           style: TextStyle(
               color: Colors.black, fontSize: 28, fontStyle: FontStyle.italic),
         ),
@@ -28,33 +32,63 @@ class DeatailsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SizedBox(
-              height: 350,
-              width: double.infinity,
-              child: WebView(
-                initialUrl: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ',
-                javascriptMode: JavascriptMode.unrestricted,
-              ),
+          children: [
+            Expanded(
+              child: WebviewScaffold(
+                  url: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ'),
             ),
             Text(
-              'Coffee Machine',
+              product.name ?? '',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 25),
             ),
             Expanded(
-              child: Text(
-                '''Product details
-Package Dimensions ‏ : ‎ 29 x 23 x 11 cm; 1 Kilograms
-Date First Available ‏ : ‎ 7 December 2021
-Manufacturer ‏ : ‎ Dejavu
-ASIN ‏ : ‎ B09N7QF9S6
-Item model number ‏ : ‎ PMA-DVTT-010
-Department ‏ : ‎ Womens''',
-                style: TextStyle(
-                  color: Colors.grey,
+              child: Padding(
+                padding: EdgeInsets.only(top: 20.0, left: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(color: Colors.black),
+                        children: [
+                          TextSpan(
+                            text: 'Color: ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(text: '${product.color ?? ''}'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(color: Colors.black),
+                        children: [
+                          TextSpan(
+                            text: 'Price: ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(text: '${product.price ?? ''}'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(color: Colors.black),
+                        children: [
+                          TextSpan(
+                            text: 'Description: ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(text: '${product.description ?? ''}'),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
