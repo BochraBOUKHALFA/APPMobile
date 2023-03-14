@@ -1,4 +1,4 @@
-import 'package:appmobile/screens/home/home_screen.dart';
+import 'package:appmobile/screens/home/HomePage.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -44,7 +44,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                       // Redirection vers une autre page si la requête réussit
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(builder: (context) => HomePage()),
                       );
                     }).catchError((error) {
                       Fluttertoast.showToast(
