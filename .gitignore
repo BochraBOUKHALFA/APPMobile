@@ -49,3 +49,5 @@ ios/Runner.xcodeproj
 ios/Runner.xcworkspace
 ios/Runner.xcodeproj/project.pbxproj
 /android
+/ios
+pubspec.lock
