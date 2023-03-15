@@ -26,7 +26,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/14.png'),
+            image: AssetImage('assets/images/Kaka.PNG'),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),
@@ -127,12 +127,12 @@ class _ScanScreenState extends State<Qr_code_Screen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
+      /* bottomNavigationBar: BottomAppBar(
         child: Image.asset(
           'assets/images/13.png',
           fit: BoxFit.cover,
         ),
-      ),
+      ),*/
     );
   }
 
