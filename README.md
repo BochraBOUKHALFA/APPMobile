@@ -1,16 +1,10 @@
-# appmobile
+# PayeTonKawa en flutter 
 
-A new Flutter project.
+## Cette application mobile Flutter est conçue pour permettre aux utilisateurs de se connecter avec une double authentification utilisant à la fois un code QR et une adresse e-mail. Une fois connecté, l'utilisateur peut accéder à une liste de machines à café disponibles recuperer depuis l'API Revendeurs. Les machines à café sont affichées en 3D pour une meilleure expérience utilisateur.
 
-## Getting Started
+##Flutter pour le développement de l'interface utilisateur
+L’API Revendeurs pour récupérer les données des produits
 
-This project is a starting point for a Flutter application.
+Bibliothèques pour implémenter la double authentification et les objets 3D dans l'application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
