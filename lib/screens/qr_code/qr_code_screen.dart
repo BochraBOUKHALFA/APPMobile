@@ -6,6 +6,8 @@ import 'package:appmobile/services/readqr.dart';
 import 'package:appmobile/services/api_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appmobile/constants.dart';
+import 'package:http/http.dart' as http;
+
 
 class Qr_code_Screen extends StatefulWidget {
   @override
@@ -83,8 +85,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                           ),
                           onPressed: () {
                             scanQr().then((qrResult) {
-                              final apiService = ApiService();
-                              apiService.getSeller(qrResult).then((first_name) {
+                              getSeller(client, qrResult).then((first_name) {
                                 Fluttertoast.showToast(
                                     msg: "Connexion réussie",
                                     toastLength: Toast.LENGTH_LONG,
@@ -96,7 +97,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomeScreen()),
+                                      builder: (context) => HomePage()),
                                 );
                               }).catchError((error) {
                                 Fluttertoast.showToast(
