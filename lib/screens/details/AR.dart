@@ -10,19 +10,19 @@ class ARScreen extends StatefulWidget {
 }
 
 class ARScreenState extends State<ARScreen> {
-late ArCoreController arCoreController;
-late ArCoreNode node;
+  late ArCoreController arCoreController;
+  late ArCoreNode node;
 
-void dipsose(){
-  super.dispose();
-  arCoreController.dispose();
-}
+  void dipsose(){
+    super.dispose();
+    arCoreController.dispose();
+  }
 
-_onArCoreViewCreated(ArCoreController controller){
-  arCoreController = controller;
-   _addToon(arCoreController);
-  //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
-}
+  _onArCoreViewCreated(ArCoreController controller){
+    arCoreController = controller;
+    _addToon(arCoreController);
+    //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
+  }
 
 /*_handleOnPlaneDetected(ArCorePlane plane){
   if(node!=null){
@@ -31,34 +31,34 @@ _onArCoreViewCreated(ArCoreController controller){
   _addToon(arCoreController, plane);
 }*/
 
-_addToon(ArCoreController controller){
-  final node = ArCoreReferenceNode(
-    name: 'Coffee',
-    object3DFileName: 'Coffee.sfa',
-    scale: vector.Vector3(0.5,0.5,0.5),
-    position: vector.Vector3(0,-1,-1),
-    rotation: vector.Vector4(0,180,0,0),
-  );
-  controller.addArCoreNode(node);
-}
+  _addToon(ArCoreController controller){
+    final node = ArCoreReferenceNode(
+      name: 'Toon',
+      object3DFileName: 'Toon.sfb',
+      scale: vector.Vector3(0.5,0.5,0.5),
+      position: vector.Vector3(0,-1,-1),
+      rotation: vector.Vector4(0,-180,0,0),
+    );
+    controller.addArCoreNode(node);
+  }
 
- _addSphere(ArCoreController controller, ArCorePlane plane){
-   final material = ArCoreMaterial(color:Colors.red);
-   final sphere = ArCoreSphere(materials:[material], radius:0.2);
-   node = ArCoreNode(
-     name: 'Sphere',
-     shape: sphere,
-     position: plane.centerPose?.translation,
-     rotation: plane.centerPose?.rotation
-   );
-   controller.addArCoreNode(node);
- }
+  _addSphere(ArCoreController controller, ArCorePlane plane){
+    final material = ArCoreMaterial(color:Colors.red);
+    final sphere = ArCoreSphere(materials:[material], radius:0.2);
+    node = ArCoreNode(
+        name: 'Sphere',
+        shape: sphere,
+        position: plane.centerPose?.translation,
+        rotation: plane.centerPose?.rotation
+    );
+    controller.addArCoreNode(node);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ArCoreView(onArCoreViewCreated: _onArCoreViewCreated,
-      enableUpdateListener: true,),
+        enableUpdateListener: true,),
     );
   }
 }
