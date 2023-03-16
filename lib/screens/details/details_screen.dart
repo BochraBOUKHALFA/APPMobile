@@ -1,3 +1,4 @@
+import 'package:appmobile/screens/details/AR.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -6,6 +7,7 @@ import 'package:appmobile/ApiData/Data.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Data product;
+  final bool isInDetailsPage = true;
 
   const DetailsScreen({Key? key, required this.product}) : super(key: key);
 
@@ -87,6 +89,20 @@ class DetailsScreen extends StatelessWidget {
                           TextSpan(text: '${product.description ?? ''}'),
                         ],
                       ),
+                    ),
+                    SizedBox(height: 16.0),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.brown, // background color
+                        onPrimary: Colors.white, // foreground color
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ARScreen()),
+                        );
+                      },
+                      child: Text('Réalité augmentée'),
                     ),
                   ],
                 ),
