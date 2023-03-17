@@ -76,8 +76,8 @@ dependencies {
 apply plugin : 'com.google.ar.sceneform.plugin'
 
 sceneform.asset(
-        'sampledata/Coffee.obj',
+        'sampledata/Coffee_machine_BI.obj',
         'default',
-        'sampledata/Coffee.sfa',
+        'sampledata/Coffee_machine_BI.sfa',
         'src/main/assets/Toon'
 )
