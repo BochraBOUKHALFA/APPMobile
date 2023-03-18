@@ -38,6 +38,10 @@ android {
         jvmTarget = '1.8'
     }
 
+    task prepareKotlinBuildScriptModel {
+
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
