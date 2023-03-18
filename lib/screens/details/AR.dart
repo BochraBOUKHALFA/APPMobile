@@ -24,12 +24,6 @@ class ARScreenState extends State<ARScreen> {
     //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
   }
 
-/*_handleOnPlaneDetected(ArCorePlane plane){
-  if(node!=null){
-    arCoreController.removeNode(nodeName: node.name);
-  }
-  _addToon(arCoreController, plane);
-}*/
 
   _addToon(ArCoreController controller){
     final node = ArCoreReferenceNode(
