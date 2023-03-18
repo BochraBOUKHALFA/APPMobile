@@ -29,9 +29,11 @@ class ARScreenState extends State<ARScreen> {
     final node = ArCoreReferenceNode(
       name: 'Toon',
       object3DFileName: 'Toon.sfb',
-      scale: vector.Vector3(0.5,0.5,0.5),
-      position: vector.Vector3(0,-1,-1),
-      rotation: vector.Vector4(0,-180,0,0),
+      scale: vector.Vector3(0.27,0.27,0.27),
+      position: vector.Vector3(0,-1,-1.75),
+      rotation: vector.Vector4(0, 0, 0,180 ),
+
+
     );
     controller.addArCoreNode(node);
   }
