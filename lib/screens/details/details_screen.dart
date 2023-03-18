@@ -7,7 +7,6 @@ import 'package:appmobile/ApiData/Data.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Data product;
-  final bool isInDetailsPage = true;
 
   const DetailsScreen({Key? key, required this.product}) : super(key: key);
 
@@ -97,7 +96,7 @@ class DetailsScreen extends StatelessWidget {
                         onPrimary: Colors.white, // foreground color
                       ),
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(builder: (context) => ARScreen()),
                         );
