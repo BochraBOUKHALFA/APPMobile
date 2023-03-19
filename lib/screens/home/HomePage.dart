@@ -112,8 +112,7 @@ class _HomePageState extends State<HomePage> {
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: NetworkImage(
-                                    "https://image.shutterstock.com/image-vector/coffee-machine-logo-design-260nw-621385727.jpg" ??
-                                        "",
+                                    product.image ?? "",
                                   ),
                                 ),
                               ),

@@ -2,14 +2,15 @@ class Data {
   String? color;
   String? description;
   String? name;
+  String? image;
   String? price;
-
-  Data({this.color, this.description, this.name, this.price});
+  Data({this.color, this.description, this.name, this.image, this.price});
 
   Data.fromJson(Map<String, dynamic> json) {
     color = json['color'];
     description = json['description'];
     name = json['name'];
+    image = json['image'];
     price = json['price'];
   }
 
@@ -18,6 +19,7 @@ class Data {
     data['color'] = this.color;
     data['description'] = this.description;
     data['name'] = this.name;
+    data['image'] = this.image;
     data['price'] = this.price;
     return data;
   }
