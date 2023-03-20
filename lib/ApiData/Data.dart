@@ -4,7 +4,14 @@ class Data {
   String? name;
   String? image;
   String? price;
-  Data({this.color, this.description, this.name, this.image, this.price});
+  String? stock;
+  Data(
+      {this.color,
+      this.description,
+      this.name,
+      this.image,
+      this.price,
+      this.stock});
 
   Data.fromJson(Map<String, dynamic> json) {
     color = json['color'];
@@ -12,6 +19,7 @@ class Data {
     name = json['name'];
     image = json['image'];
     price = json['price'];
+    stock = json['stock'];
   }
 
   Map<String, dynamic> toJson() {
@@ -21,6 +29,7 @@ class Data {
     data['name'] = this.name;
     data['image'] = this.image;
     data['price'] = this.price;
+    data['stock'] = this.stock;
     return data;
   }
 }
