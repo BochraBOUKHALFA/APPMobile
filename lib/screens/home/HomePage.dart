@@ -4,7 +4,7 @@ import 'package:appmobile/constants.dart';
 import 'package:appmobile/ApiData/Data.dart';
 import 'package:appmobile/ApiData/Response.dart';
 import 'package:appmobile/services/ApiServiceProvider.dart';
-import 'package:appmobile/screens/details/details_screen.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

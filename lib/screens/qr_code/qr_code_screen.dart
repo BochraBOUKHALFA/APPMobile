@@ -1,7 +1,5 @@
 import 'package:appmobile/screens/home/HomePage.dart';
-import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:appmobile/services/readqr.dart';
 import 'package:appmobile/services/api_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';

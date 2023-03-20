@@ -1,6 +1,5 @@
 import 'package:appmobile/screens/email/email_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:appmobile/screens/qr_code/qr_code_screen.dart';
 import 'package:appmobile/constants.dart';
 
 class PrehomeScreen extends StatelessWidget {
