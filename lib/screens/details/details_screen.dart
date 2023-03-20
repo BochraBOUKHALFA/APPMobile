@@ -2,6 +2,7 @@ import 'package:appmobile/screens/details/AR.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:appmobile/constants.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:appmobile/ApiData/Data.dart';
 
@@ -51,25 +52,12 @@ class DetailsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: 'Color: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          TextSpan(text: '${product.color ?? ''}'),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 8.0),
                     Card(
                       elevation: 4.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      color: Color(0xFFFFF8DC), // beige color
+                      color: Color.fromARGB(226, 151, 125, 109), // beige color
                       child: Padding(
                         padding: EdgeInsets.all(16.0),
                         child: Column(
@@ -81,7 +69,7 @@ class DetailsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 8.0),
                             Text(
-                              'Stock: ${product.stock ?? ''}',
+                              'Stock: ${(product.stock).toString()}',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 8.0),

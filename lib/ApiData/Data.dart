@@ -4,7 +4,7 @@ class Data {
   String? name;
   String? image;
   String? price;
-  String? stock;
+  int? stock;
   Data(
       {this.color,
       this.description,
