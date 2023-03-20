@@ -1,7 +1,6 @@
 import 'package:appmobile/screens/details/AR.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:appmobile/ApiData/Data.dart';
 

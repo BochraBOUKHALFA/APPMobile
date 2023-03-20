@@ -1,11 +1,5 @@
-import 'package:appmobile/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:appmobile/constants.dart';
-import 'package:flutter_svg/svg.dart';
 
-import 'header_with_serchbox.dart';
-
-import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

@@ -2,7 +2,6 @@ import 'package:appmobile/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-
 import '../../services/api_service.dart';
 import '../qr_code/qr_code_screen.dart';
 
