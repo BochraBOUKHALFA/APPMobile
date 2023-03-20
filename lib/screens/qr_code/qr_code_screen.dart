@@ -6,7 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appmobile/constants.dart';
 import 'package:http/http.dart' as http;
 
-
 class Qr_code_Screen extends StatefulWidget {
   @override
   _ScanScreenState createState() => _ScanScreenState();
@@ -62,7 +61,7 @@ class _ScanScreenState extends State<Qr_code_Screen> {
                       Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: kPrimaryColor,
+                          color: Colors.brown,
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: ElevatedButton(

@@ -8,7 +8,7 @@ class ApiServiceProvider {
   String url = "https://api-revendeurs-wyqn.onrender.com/productsheader";
 
   Future<Response> getData() async {
-    String fileName = "userdata.json";
+    String fileName = "productdata.json";
 
     var dir = await getTemporaryDirectory();
     File file = new File(dir.path + "/" + fileName);

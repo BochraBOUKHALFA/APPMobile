@@ -35,14 +35,18 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Expanded(
               child: WebviewScaffold(
-                  url: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ'),
+                url: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ',
+              ),
             ),
-            Text(
-              product.name ?? '',
-              style: TextStyle(
+            Center(
+              child: Text(
+                product.name ?? '',
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: 25),
+                  fontSize: 25,
+                ),
+              ),
             ),
             Expanded(
               child: Padding(
@@ -50,57 +54,54 @@ class DetailsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: 'Color: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          TextSpan(text: '${product.color ?? ''}'),
-                        ],
+                    Card(
+                      elevation: 4.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    SizedBox(height: 8.0),
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: 'Price: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          TextSpan(text: '${product.price ?? ''}'),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 8.0),
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: 'Description: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          TextSpan(text: '${product.description ?? ''}'),
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Price: ${product.price ?? ''} €',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                              'Stock: ${(product.stock).toString()}',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                              'Description: ${product.description ?? ''}',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                              'Color: ${product.color ?? ''}',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 16.0),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.brown, // background color
-                        onPrimary: Colors.white, // foreground color
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.brown, // background color
+                          onPrimary: Colors.white, // foreground color
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => ARScreen()),
+                          );
+                        },
+                        child: Text('Réalité augmentée'),
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => ARScreen()),
-                        );
-                      },
-                      child: Text('Réalité augmentée'),
                     ),
                   ],
                 ),
