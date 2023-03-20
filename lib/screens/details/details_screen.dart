@@ -37,14 +37,18 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Expanded(
               child: WebviewScaffold(
-                  url: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ'),
+                url: 'https://app.vectary.com/p/4j9qXY8W5J1CQkNUBfXGKZ',
+              ),
             ),
-            Text(
-              product.name ?? '',
-              style: TextStyle(
+            Center(
+              child: Text(
+                product.name ?? '',
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: 25),
+                  fontSize: 25,
+                ),
+              ),
             ),
             Expanded(
               child: Padding(
@@ -87,18 +91,20 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16.0),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.brown, // background color
-                        onPrimary: Colors.white, // foreground color
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.brown, // background color
+                          onPrimary: Colors.white, // foreground color
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => ARScreen()),
+                          );
+                        },
+                        child: Text('Réalité augmentée'),
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => ARScreen()),
-                        );
-                      },
-                      child: Text('Réalité augmentée'),
                     ),
                   ],
                 ),
