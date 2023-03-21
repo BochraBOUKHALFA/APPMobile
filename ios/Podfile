@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '14.0'
+
+plugin 'cocoapods-embed-flutter'
+
+target 'Runner' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Runner
+  pod 'Flutter'
+  pod 'fluttertoast', :path => '../packages/fluttertoast-8.2.1/ios'
+  pod 'flutter_barcode_scanner', :path => '../packages/flutter_barcode_scanner/ios'
+  pod 'ar_flutter_plugin', :path => '../packages/ar_flutter_plugin-0.7.3/ios'
+  pod 'arkit_plugin', :path => '../packages/arkit_plugin-1.0.5/ios'
+  pod 'flutter_inappwebview', :path => '../packages/flutter_inappwebview-5.7.2/ios'
+  pod 'geolocator_apple', :path => '../packages/geolocator_apple-2.2.5/ios'
+  pod 'permission_handler_apple', :path => '../packages/permission_handler_apple-9.0.7/ios'
+  pod 'url_launcher_ios', :path => '../packages/url_launcher_ios-6.1.1/ios'
+  pod 'path_provider_foundation', :path => '../packages/path_provider_foundation/ios'
+  pod 'webview_flutter_wkwebview', :path => '../packages/webview_flutter_wkwebview-3.1.0/ios'
+  pod 'flutter_webview_plugin', :path => '../packages/flutter_webview_plugin-0.4.0/ios'
+
+
+end
