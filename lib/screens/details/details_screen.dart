@@ -87,7 +87,7 @@ class DetailsScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.0),
+                    SizedBox(height: 13.0),
                     Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
