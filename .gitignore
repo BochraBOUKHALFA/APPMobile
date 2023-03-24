@@ -17,7 +17,6 @@ migrate_working_dir/
 .idea/
 .vscode/
 macos/
-pubspec.lock
 
 
 # The .vscode folder contains launch configuration and tasks you configure in
@@ -49,4 +48,3 @@ ios/Runner.xcodeproj
 ios/Runner.xcworkspace
 ios/Runner.xcodeproj/project.pbxproj
 /ios
-pubspec.lock
