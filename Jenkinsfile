@@ -3,12 +3,20 @@ pipeline {
     
     environment {
         PATH = "$PATH:/Users/juba/flutter/bin"
+        HOME = "/Users/juba/"
     }
 
     stages{
+        
+        stage('setup') {
+        			steps {
+            			sh "git config --global --add safe.directory '/Users/juba/flutter'"
+            		}	        
+        }
+        
         stage('checkout') { 
             steps {
-                git branch:'develop',url:'https://github.com/bouchrasource/APPMobile.git'
+                git branch:'main',url:'https://github.com/BochraBOUKHALFA/APPMobile.git'
                 }
             
 
