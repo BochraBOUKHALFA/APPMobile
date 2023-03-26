@@ -19,6 +19,6 @@
     - Choisir l'appareil android (ou un emulateur) sur lequel executer l'application
     - Lancer la commande : `flutter pub get` pour l'installation des dépendances à la racine du projet
     - Lancer la commande : `cd ios` puis `pod install`
-    - Revenir à la racine du projet : `cd ..``
+    - Revenir à la racine du projet : `cd ..`
     - Lancer la commande : `flutter run`
 
